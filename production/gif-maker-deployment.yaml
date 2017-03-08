@@ -36,6 +36,21 @@ spec:
             - "-bucket=$(BUCKET)"
             - "-database=$(DATABASE)"
             - "-project-id=$(PROJECT_ID)"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
           resources:
             limits:
               cpu: 2000m
