@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gif-maker
-          image: "gcr.io/hightowerlabs/gif-maker:d407ef85-b6e5-4526-a2bf-2ff17055125c" 
+          image: "gcr.io/hightowerlabs/gif-maker:0.0.1" 
           imagePullPolicy: Always
           env:
             - name: BUCKET
